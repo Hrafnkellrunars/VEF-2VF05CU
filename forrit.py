@@ -1,4 +1,5 @@
 from bottle import route, static_file, run
+import os
 
 
 @route('/')
@@ -73,5 +74,5 @@ def index():
                 </body>
             </html>
         '''
-
-run(host='localhost', port=8080, debug=True)
+run(host='0.0.0.0', port=os.environ.get('PORT'))
+#run(host='localhost', port=8080, debug=True)
